@@ -1,0 +1,12 @@
+{% extends '_base.html.twig' %}
+
+{% block pageTitle %}List Page {% endblock %}
+{% block main %}
+    <h1>Welcome to the Karate Dojo HomePage {{ user }}</h1>
+<ul>
+    <li><a href = "/userlist">List all users</a></li>
+    <li> <a href = "/login">Admin Login</a></li>
+    <li> <a href = "/studentLogin">Student Login</a></li>
+    <li> <a href = "/showStudent">List of Students</a></li>
+    </ul>
+{% endblock %}

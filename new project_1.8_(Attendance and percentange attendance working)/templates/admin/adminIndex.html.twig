@@ -1,0 +1,17 @@
+{% extends '_base.html.twig' %}
+
+{% block pageTitle %}List Page {% endblock %}
+{% block main %}
+    <h1>Welcome to the Karate Dojo Admin page {{ user }}</h1>
+<ul>
+    <li><a href = "/userlist">List all users</a></li>
+    <li><a href = "/showStudent">List all students</a></li>
+    <li> <a href = "/logout">Logout</a></li>
+    <li> <a href = "/addUser">Add a new Administrator</a></li>
+    <li> <a href = "/addStudentForm">Add a new student</a></li>
+    <li> <a href = "/attendance">Mark Attendance</a></li>
+
+    <li> <a href = "/percentAttendance">Percentage Attendance of Student 10</a></li>
+
+</ul>
+{% endblock %}
