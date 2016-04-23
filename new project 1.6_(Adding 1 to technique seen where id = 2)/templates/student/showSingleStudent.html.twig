@@ -1,0 +1,32 @@
+{% extends '_base.html.twig' %}
+
+{% block pageTitle %}Single Student Page {% endblock %}
+
+{% block main %}
+<h1>{{ student.firstname }} {{ student.surname }}</h1>
+
+    {#{{ student.seen }}#}
+    ID = {{ student.id }}
+    <br>
+    Join Date = {{ student.joindate }}
+    <br>
+    Last Grading = {{ student.lastgrading }}
+    <br>
+    Current Grade = {{ student.currentgrade }}
+    <br>
+    Average Grade = {{ student.avggrade }}
+    <br>
+    Eligible = {{ student.eligible }}
+    <br>
+    Techniques seen at C grade = {{ student.seen }}
+
+    <form action="/index.php?action=seen" method="post">
+        <input type="hidden" name="id" value="{{ student.id }}">
+        <input type="hidden" name="seen" value="{{ student.seen }}">
+        <input type="submit" value="Add Technique Seen">
+
+
+    </form>
+
+
+{% endblock %}

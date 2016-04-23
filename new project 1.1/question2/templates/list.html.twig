@@ -1,0 +1,30 @@
+{#----------------#}
+{# templates/list.html.twig #}
+{#----------------#}
+
+{% extends '_base.html.twig' %}
+
+{% block pageTitle %}list page{% endblock %}
+
+{% block main %}
+
+<h1>Great Detective Books</h1>
+
+<table>
+
+    {% set page_count = 0 %}
+
+    {% for book in books %}
+        <tr>
+            <th>
+                <a href="/show/{{ book.isbn }}">{{ book.title }}</a>
+            </th>
+
+            <td>
+                <img src="/images/{{ book.image }}">
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
