@@ -1,0 +1,52 @@
+{% extends '_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}List of Students page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+    <h2>Students</h2>
+
+    <table>
+        <tr>
+            <th> ID </th>
+            <th> Surname </th>
+            <th> First Name </th>
+            <th> Join Date </th>
+            <th> Last Grading </th>
+            <th> Current Belt </th>
+            <th> Avg Grade </th>
+            <th> Attended </th>
+        </tr>
+
+        {% for student in students %}
+            <tr>
+                <td><a href = "/showStudent/{{ student.id }}">{{ student.id }}</a>
+                </td>
+                <td>{{ student.surname }}</td>
+                <td>{{ student.firstname }}</td>
+                <td>{{ student.joindate }}</td>
+                <td>{{ student.lastgrading }}</td>
+                <td>{{ student.currentgrade }}</td>
+                <td>{{ student.avggrade }}</td>
+                <td>{{ student.totalAttendedPercentage }}%</td>
+
+                <td>
+                    image
+                </td>
+                <td>
+                <form action="/deleteStudent"method="post">
+                    <input type="hidden" name="delete" value="delete">
+                    <input type="hidden" name="id" value="{{ student.id }}">
+
+                    <input type="submit" value="DELETE">
+                </form>
+                </td>
+
+            </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}
