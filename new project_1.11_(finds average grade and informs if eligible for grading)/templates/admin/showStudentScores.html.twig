@@ -1,0 +1,31 @@
+{% extends '_base.html.twig' %}
+
+{% block pageTitle %}Single Student Score Page {% endblock %}
+
+{% block main %}
+<h1>Student Scores</h1>
+
+{{ student.firstName }} {{ student.surname }}
+    <br>
+    {{ technique.name }} technique
+    <br>
+    Has now been updated to have a score of {{ grade.score }}
+    <hr>
+    his other scores are
+    <br>
+    <table>
+        <tr>
+    {% for t in techs %}
+       <th> {{ t.name }}</th>
+    {% endfor %}
+{##}</tr>
+        <tr>
+    {% for g in grades %}
+
+        <td> {{ g.score }}</td>
+
+    {% endfor %}
+        </tr>
+    </table>
+    <h1>{{ eligibility }}</h1>
+{% endblock %}
