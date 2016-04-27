@@ -1,0 +1,34 @@
+{% extends '_base.html.twig' %}
+
+{% block pageTitle %}Single Student Page {% endblock %}
+
+{% block main %}
+<h1>Student Techniques</h1>
+Which technique would you like to update for {{ student.firstName }} {{ student.surname }}
+    <br>
+    <form action="/updateGrade" method="post">
+
+    <p>
+
+    </p>
+    {% for technique in techniques %}
+    <br>
+        {{ technique.name }}
+        <input type="radio" name="techniqueId" checked  value={{ technique.id }}>
+        <br>
+
+        {% endfor %}
+        <select name="score">
+            <option value = 1> - E - </option>
+            <option value = 2> - D - </option>
+            <option value = 3> - C - </option>
+            <option value = 4> - B - </option>
+            <option value = 5> - A - </option>
+        </select>
+        <input type="hidden" name="studentId" value={{ student.id }}>
+
+        <input type="submit" value="Add Score">
+
+    </form>
+
+{% endblock %}
